@@ -1,11 +1,7 @@
-import Say from './Say';
+import EventPractice from './EventPractice';
 
 function App() {
-  return (
-    <div>
-      <Say />
-    </div>
-  );
+  return <EventPractice />;
 }
 
 export default App;
