@@ -1,4 +1,4 @@
-import { ChangeEvent, Component } from 'react';
+import { ChangeEvent, Component, KeyboardEvent } from 'react';
 
 class EventPractice extends Component {
   state = {
@@ -11,6 +11,7 @@ class EventPractice extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -20,6 +21,10 @@ class EventPractice extends Component {
   handleClick() {
     alert(this.state.username + ': ' + this.state.message);
     this.setState({ username: '', message: '' });
+  }
+
+  handleKeyPress(e: KeyboardEvent) {
+    if (e.key === 'Enter') this.handleClick();
   }
 
   render() {
@@ -39,6 +44,7 @@ class EventPractice extends Component {
           placeholder="아무거나 입력해 보세요"
           value={this.state.message}
           onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}
         />
         <button onClick={this.handleClick}>확인</button>
       </div>
