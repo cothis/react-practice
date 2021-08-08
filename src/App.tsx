@@ -1,4 +1,4 @@
-import MyComponent from './MyComponent';
+import Counter from './Counter';
 
 function App() {
   const state = {
@@ -9,9 +9,7 @@ function App() {
 
   return (
     <div>
-      <MyComponent age={25}>
-        <div>둘둘</div>
-      </MyComponent>
+      <Counter />
     </div>
   );
 }
