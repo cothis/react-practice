@@ -1,9 +1,4 @@
-import {
-  ChangeEventHandler,
-  KeyboardEventHandler,
-  ReactEventHandler,
-  useState,
-} from 'react';
+import { ChangeEventHandler, KeyboardEventHandler, useState } from 'react';
 
 function IterationSample() {
   const [names, setNames] = useState([
