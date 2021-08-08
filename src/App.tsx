@@ -1,7 +1,7 @@
-import Counter from './8장/Counter';
+import Info from './8장/Info';
 
 const App = () => {
-  return <Counter />;
+  return <Info />;
 };
 
 export default App;

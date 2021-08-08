@@ -1,30 +1,34 @@
-import { ChangeEventHandler, useState, useEffect } from 'react';
+import { ChangeEventHandler, useReducer } from 'react';
+
+interface IState {
+  name: string;
+  nickname: string;
+}
+
+function reducer(state: IState, action: HTMLInputElement): IState {
+  return {
+    ...state,
+    [action.name]: action.value,
+  };
+}
 
 const Info = () => {
-  const [name, setName] = useState('');
-  const [nickname, setNickname] = useState('');
+  const [state, dispatch] = useReducer(reducer, {
+    name: '',
+    nickname: '',
+  });
 
-  useEffect(() => {
-    console.log('effect');
+  const { name, nickname } = state;
 
-    return () => {
-      console.log('cleanup');
-    };
-  }, []);
-
-  const onChangeName: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setName(e.target.value);
-  };
-
-  const onChangeNickname: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setNickname(e.target.value);
+  const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    dispatch(e.target);
   };
 
   return (
     <div>
       <div>
-        <input value={name} onChange={onChangeName} />
-        <input value={nickname} onChange={onChangeNickname} />
+        <input name="name" value={name} onChange={onChange} />
+        <input name="nickname" value={nickname} onChange={onChange} />
       </div>
       <div>
         <div>
