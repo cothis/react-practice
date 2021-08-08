@@ -1,15 +1,9 @@
-import Counter from './Counter';
+import Say from './Say';
 
 function App() {
-  const state = {
-    name: 'react',
-  };
-
-  console.log(state);
-
   return (
     <div>
-      <Counter />
+      <Say />
     </div>
   );
 }
