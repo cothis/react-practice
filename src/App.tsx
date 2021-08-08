@@ -1,18 +1,7 @@
-import { useState } from 'react';
-import Info from './8장/Info';
+import Counter from './8장/Counter';
 
 const App = () => {
-  const [visible, setVisible] = useState(false);
-
-  return (
-    <div>
-      <button onClick={() => setVisible(!visible)}>
-        {visible ? '숨기기' : '보이기'}
-      </button>
-      <hr />
-      {visible && <Info />}
-    </div>
-  );
+  return <Counter />;
 };
 
 export default App;
